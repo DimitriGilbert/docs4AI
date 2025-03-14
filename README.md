@@ -66,6 +66,28 @@ The distillation process used the following prompting strategy with Claude 3.7:
 - Managed the extensive documentation by dividing it into five sections, followed by an additional sixth section to capture any overlooked details.
 - Permitted content reorganization to optimize for LLM efficiency over human readability.
 
+### Actual Prompts Used for Marqo Example:
+
+*Main Prompt:*
+
+> I attached the COMPLETE documentation for marqo, the python library and system that allows you to index documents and do fused lexical/semantic search over them.
+>
+> The documentation contains a lot of "fluff" and references to the Marqo cloud service (api keys, etc.) which we do NOT care about-- we only care about the open source marqo software that you run locally on Linux yourself. I pasted the docs manually from the documentation website.  
+>
+> Your goal is to meticulously read and understand everything and then distill it down into the most compact and clear form that would still be easily intelligible to YOU in a new conversation where you had never seen the original documentation text. It's too long to do in one shot, so let's do it in 5 sections, starting now with the first part. 
+>
+> Feel free to rearrange the order of sections so that it makes most sense to YOU since YOU will be the one consuming the output! Don't worry if it would be confusing or hard to follow by a human, it's not for a human, it's for YOU to quickly and efficiently convey all the relevant information in the documentation.
+
+*Follow-Up Prompts of the Form:*
+
+> continue with part 1 of 5
+>
+> ...
+> 
+> continue with part 4 of 5
+>
+> ok now make a part 6 with all the important stuff that you left out from the full docs in the 5 parts you already wrote above
+ 
 ## Benefits and Use Cases
 
 Optimized documentation offers multiple advantages:
