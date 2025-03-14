@@ -80,7 +80,7 @@ The distillation process used the following prompting strategy with Claude 3.7:
 
 *Follow-Up Prompts of the Form:*
 
-> continue with part 1 of 5
+> continue with part 2 of 5
 >
 > ...
 > 
