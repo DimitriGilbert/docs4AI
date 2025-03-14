@@ -54,8 +54,8 @@ This repository initially showcases optimized documentation for the `marqo` Pyth
 
 ### Files Included
 
-- `marqo_original_docs_merged.txt`: Original, full documentation from Marqo.
-- `marqo_condensed_docs_for_lllm.md`: Condensed, optimized version specifically crafted for LLM consumption.
+- [`marqo_original_docs_merged.txt`](https://github.com/Dicklesworthstone/llm-docs/blob/main/marqo_original_docs_merged.txt): Original, full documentation from Marqo.
+- [`marqo_condensed_docs_for_lllm.md`](https://github.com/Dicklesworthstone/llm-docs/blob/main/marqo_condensed_docs_for_lllm.md): Condensed, optimized version specifically crafted for LLM consumption.
 
 ### Condensation Strategy
 
