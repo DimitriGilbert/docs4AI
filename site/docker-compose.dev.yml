@@ -1,0 +1,44 @@
+version: "3.8"
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - UID=${UID:-1000}
+    ports:
+      - "30947:30947"
+    environment:
+      - NODE_ENV=development
+      - HOST=0.0.0.0
+      - PORT=30947
+      - DATABASE_URL=postgres://site_user_dc5c2513:site_user_dc5c2513@postgres:5432/site_db_29bd284d
+    volumes:
+      - .:/app
+    user: "${UID:-1000}"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - site
+    container_name: site
+  postgres:
+    image: postgres:alpine
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=site_user_dc5c2513
+      - POSTGRES_DB=site_db_29bd284d
+      - POSTGRES_PASSWORD=site_user_dc5c2513
+    volumes:
+      - ./data/postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - site
+networks:
+  site:
+    driver: bridge
